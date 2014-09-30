@@ -43,3 +43,198 @@ Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-09-30 20:02:56 +0000
 
 
 Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-09-30 20:02:56 +0000
+
+
+Started GET "/movies" for 10.0.2.2 at 2014-09-30 20:13:21 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (3.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 374ms (Views: 345.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-09-30 20:13:21 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-09-30 20:13:21 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:21 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:22 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:22 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:22 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:22 +0000
+
+
+Started GET "/movies/new" for 10.0.2.2 at 2014-09-30 20:13:23 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/_form.html.erb (105.5ms)
+  Rendered movies/new.html.erb within layouts/application (168.4ms)
+Completed 200 OK in 433ms (Views: 426.1ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/movies" for 10.0.2.2 at 2014-09-30 20:13:57 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"odSbI7e3vPoVWyGEA7Adn8GamjmLmVSqc/a6ejR9Tr8=", "movie"=>{"title"=>"Batman", "release_date"=>"2014-09-07", "director"=>"Christopher Nolan", "runtime_in_minutes"=>"210", "poster_image_url"=>"www.google.com", "description"=>"the batman"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered movies/_form.html.erb (5.4ms)
+  Rendered movies/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 379ms (Views: 373.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-09-30 20:13:58 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:58 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:58 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:58 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:58 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-09-30 20:13:58 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-09-30 20:13:58 +0000
+
+
+Started POST "/movies" for 10.0.2.2 at 2014-09-30 20:14:04 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"odSbI7e3vPoVWyGEA7Adn8GamjmLmVSqc/a6ejR9Tr8=", "movie"=>{"title"=>"Batman", "release_date"=>"2015-09-07", "director"=>"Christopher Nolan", "runtime_in_minutes"=>"210", "poster_image_url"=>"www.google.com", "description"=>"the batman"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "poster_image_url", "release_date", "runtime_in_minutes", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-09-30 20:14:04.337622"], ["description", "the batman"], ["director", "Christopher Nolan"], ["poster_image_url", "www.google.com"], ["release_date", "2015-09-07 00:00:00.000000"], ["runtime_in_minutes", 210], ["title", "Batman"], ["updated_at", "2014-09-30 20:14:04.337622"]]
+  [1m[35m (17.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 38ms (ActiveRecord: 21.6ms)
+
+
+Started GET "/movies" for 10.0.2.2 at 2014-09-30 20:14:04 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.0ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 396ms (Views: 393.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-09-30 20:14:04 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-09-30 20:14:04 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-09-30 20:14:04 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-09-30 20:14:05 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-09-30 20:14:05 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-09-30 20:14:05 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-09-30 20:14:05 +0000
+
+
+Started GET "/images/www.google.com" for 10.0.2.2 at 2014-09-30 20:14:05 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/www.google.com"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.1ms)
+
+
+Started GET "/movies/1" for 10.0.2.2 at 2014-09-30 20:14:08 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (1.8ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 364ms (Views: 360.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/images/www.google.com" for 10.0.2.2 at 2014-09-30 20:14:08 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/www.google.com"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140930201504)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "password_digest" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140930201504"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (2.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNameFieldsToUsers (20140930201941)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (5.6ms)[0m  [1mALTER TABLE "users" ADD "firstname" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "lastname" varchar(255)
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140930201941"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
