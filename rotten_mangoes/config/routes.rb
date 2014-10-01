@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+  get 'users/index'
+  end
+
   get 'categories/index'
 
   get 'categories/show'
@@ -15,6 +19,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
+
+  namespace :admin do
+    resources :users
+  end
+
 
   root to: 'movies#index'
 

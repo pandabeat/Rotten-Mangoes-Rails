@@ -3,7 +3,7 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <% @movies.each do |movie| %>
-  <%= image_tag movie.image_url.to_s %>
+  <%= image_tag movie.image_url(:thumb) %>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
   <% if movie.reviews.size > 0 %>
 	<h3>Avg. Rating: <%= movie.review_average %>/10</h3>
