@@ -26,14 +26,13 @@ class MoviesController < ApplicationController
   end
 
   def update
-  	@movie = Movie.new(movie_params)
-
-  	if @movie.save
+    @movie = Movie.find(params[:id])
+    
+  	if @movie.update_attributes(movie_params)
   		redirect_to movies_path, notice: "#{@movie.title} was updated successfully!"
   	else
   		render :edit
   	end
-
   end
 
   def destroy
@@ -45,7 +44,7 @@ class MoviesController < ApplicationController
   protected
   def movie_params
 	params.require(:movie).permit(
-      :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
+      :title, :release_date, :director, :runtime_in_minutes, :image, :description, :category
     )
   end
 end
