@@ -1,0 +1,13 @@
+<%= link_to "Back to all users", admin_user_path %><br/>
+<hr>
+  <tr>
+  <td>
+    <li> ID: <%= user.id %></li>
+    <li> FIRST: <%= user.firstname %></li>
+    <li> LAST: <%= user.lastname %></li>
+    <li> EMAIL: <%= user.email %></li>
+    <li> DATE CREATED: <%= user.created_at %></li>
+    <div>Databasea data:
+    <br><%= user.inspect %>
+  </td>
+  </tr>
