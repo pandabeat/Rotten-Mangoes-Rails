@@ -1,12 +1,20 @@
-
+require 'pry'
 
 class MoviesController < ApplicationController
   
 
   def index
-                    
-      @search = Movie.ransack(search_params)
-      @movies = @search.result
+    # => http://www.justinweiss.com/blog/2014/02/17/search-and-filter-rails-models-without-bloating-your-controller/
+    @search = Movie.all
+    @search = @search.by_title(params[:title]) if params[:title].present?
+    @search = @search.by_director(params[:director]) if params[:director].present?
+    @search = @search.by_category(params[:category]) if params[:category].present?
+    @movies = @search.order(title: :asc).page(params[:page]).per(5)
+
+
+    # => Ransack search gem. Uncomment to use              
+    # @search = Movie.ransack(search_params)
+    # @movies = @search.result
 
   end
 
@@ -51,7 +59,7 @@ class MoviesController < ApplicationController
   protected
   def movie_params
 	params.require(:movie).permit(
-      :title, :release_date, :director, :runtime_in_minutes, :image, :description, :category
+      :title, :release_date, :director, :runtime_in_minutes, :image, :remote_image_url, :description, :category
     )
   end
 

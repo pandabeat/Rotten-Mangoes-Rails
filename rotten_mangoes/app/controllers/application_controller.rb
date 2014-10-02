@@ -23,9 +23,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def search_params
-    params[:q].try(:merge, m: 'or')
-  end
+  # => Ransack search gem. Uncomment to use 
+  # def search_params
+  #   params[:q].try(:merge, m: 'or')
+  # end
 
 
   helper_method :current_user, :authorization

@@ -1,8 +1,8 @@
 class Movie < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
-
-  before_validation :add_duration_interval
+  
+  # before_create :add_duration_interval
 
   has_many :reviews
 
@@ -18,30 +18,33 @@ class Movie < ActiveRecord::Base
   validates :description,
     presence: true
 
-  validates :category,
-    presence: true
-
   validates :release_date,
     presence: true
 
   # validate :release_date_is_in_the_future
 
+
+  scope :by_title, -> (title) { where("title LIKE ?", "%#{title}%")}
+  scope :by_director, -> (director) { where("director LIKE ?", "%#{director}%")}
+  scope :by_category, -> (category) { where("category LIKE ?", "%#{category}%")}
+
   def review_average
       reviews.sum(:rating_out_of_ten)/reviews.size
   end
 
-  def add_duration_interval
-     if self.runtime_in_minutes < 90
-      self.duration == "Less than 90"
-      self.save
-    elsif (self.runtime_in_minutes >= 90) && (self.runtime_in_minutes <= 120)
-      self.duration == "Between 90 and 120"
-      self.save
-    elsif self.runtime_in_minutes > 120
-      self.duration == "Greater than 120"
-      self.save
-    end
-  end
+  # => Ransack search gem. Uncomment to use 
+  # def add_duration_interval
+  #    if self.runtime_in_minutes < 90
+  #     self.duration = "Less than 90"
+  #     self.save
+  #   elsif (self.runtime_in_minutes >= 90) && (self.runtime_in_minutes <= 120)
+  #     self.duration = "Between 90 and 120"
+  #     self.save
+  #   elsif self.runtime_in_minutes > 120
+  #     self.duration = "Greater than 120"
+  #     self.save
+  #   end
+  # end
 
   protected
   def release_date_is_in_the_future
