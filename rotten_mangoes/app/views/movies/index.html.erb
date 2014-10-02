@@ -16,17 +16,25 @@
 <div><%= link_to "Submit a movie!", new_movie_path %></div>
 <hr>
 <% @movies.each do |movie| %>
-  <a href="<%= movie_path(movie) %>"><%= image_tag movie.image_url(:thumb) %></a>
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
-  <h3>Genre: <%= movie.category %></h3>
-  <% if movie.reviews.size > 0 %>
-    <h3>Avg. Rating: <%= movie.review_average %>/10</h3>
-	<% else %>
-    <h3>Avg. Rating: This movie does not have any reviews yet.</h3>
-  <% end %>
-  <h3><%= formatted_date(movie.release_date) %></h3>
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %></p>
+  <table>
+  <tr>
+    <td>
+      <a href="<%= movie_path(movie) %>"><%= image_tag movie.image_url(:thumb) %></a>
+    </td>
+    <td>
+      <h2><%= link_to movie.title, movie_path(movie) %></h2>
+      <h3>Genre: <%= movie.category %></h3>
+      <% if movie.reviews.size > 0 %>
+        <h3>Avg. Rating: <%= movie.review_average %>/10</h3>
+    	<% else %>
+        <h3>Avg. Rating: This movie does not have any reviews yet.</h3>
+      <% end %>
+      <h3><%= formatted_date(movie.release_date) %></h3>
+      <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+      <p><%= movie.description %></p>
+      </td>
+  </tr>
+  </table>
   <hr>
 <% end %>
 <br>

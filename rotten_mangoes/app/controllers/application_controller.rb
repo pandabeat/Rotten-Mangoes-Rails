@@ -28,7 +28,6 @@ class ApplicationController < ActionController::Base
   #   params[:q].try(:merge, m: 'or')
   # end
 
-
   helper_method :current_user, :authorization
 
 end

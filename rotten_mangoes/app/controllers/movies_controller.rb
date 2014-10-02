@@ -22,8 +22,7 @@ class MoviesController < ApplicationController
     end
 
     @movies = @search.order(title: :asc).page(params[:page]).per(5)
-
-
+    
     # => Ransack search gem. Uncomment to use              
     # @search = Movie.ransack(search_params)
     # @movies = @search.result

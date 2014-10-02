@@ -46,6 +46,8 @@ before_filter :authorization
   	if @user.id == current_user.id
   		redirect_to admin_users_path, notice: "You cannot delete yourself."
   	else
+      # => send an email notification to user
+      UserMailer.notify_delete_email(@user).deliver
 			@user.destroy
   		redirect_to admin_users_path, notice: "User: #{@user.full_name} was deleted successfully"
   	end
