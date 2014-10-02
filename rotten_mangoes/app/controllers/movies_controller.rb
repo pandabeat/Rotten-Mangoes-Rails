@@ -1,8 +1,13 @@
 
 
 class MoviesController < ApplicationController
+  
+
   def index
-  	@movies = Movie.all
+                    
+      @search = Movie.ransack(search_params)
+      @movies = @search.result
+
   end
 
   def show
@@ -49,4 +54,5 @@ class MoviesController < ApplicationController
       :title, :release_date, :director, :runtime_in_minutes, :image, :description, :category
     )
   end
+
 end

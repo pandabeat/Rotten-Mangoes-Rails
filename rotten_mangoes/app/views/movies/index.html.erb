@@ -1,9 +1,34 @@
 <h1>Rotten Mangoes</h1>
 
-<%= link_to "Submit a movie!", new_movie_path %>
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :title_cont_any, "Search Titles" %>
+    <%= f.text_field :title_cont %>
+    <br>
+    <%= f.label :director_cont_any, "Search Directors" %>
+    <%= f.text_field :director_cont %>
+    <br>
+    <%= f.label :category_cont_any, "Search Categories" %>
+    <%= f.text_field :category_cont %>
+    <br>
+    <%= f.label :category_or_title_or_description_cont_any, "Search Keywords" %>
+    <%= f.text_field :category_or_title_or_description_cont %>
+    <br>
+
+    <%= f.select :duration_matches, options_for_select(['Less than 90' ,'Between 90 and 120', 'Greater than 120']), include_blank: 'Search Duration' %>
+
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+  <div class="actions"><%= link_to "Clear Search", movies_path %></div>
+<% end %>
+
+
+
+<br>
+<div><%= link_to "Submit a movie!", new_movie_path %></div>
 <hr>
 <% @movies.each do |movie| %>
-  <%= image_tag movie.image_url(:thumb) %>
+  <a href="<%= edit_movie_path(movie) %>"><%= image_tag movie.image_url(:thumb) %></a>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
   <h3>Genre: <%= movie.category %></h3>
   <% if movie.reviews.size > 0 %>
