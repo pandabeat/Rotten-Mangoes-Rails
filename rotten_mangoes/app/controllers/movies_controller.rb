@@ -7,9 +7,7 @@ class MoviesController < ApplicationController
     # => http://www.justinweiss.com/blog/2014/02/17/search-and-filter-rails-models-without-bloating-your-controller/
     @search = Movie.all
     @search = @search.by_title(params[:title]) if params[:title].present?
-
     @search = @search.by_director(params[:director]) if params[:director].present?
-
     @search = @search.by_category(params[:category]) if params[:category].present?
 
     if params[:runtime_select].present?
@@ -67,7 +65,8 @@ class MoviesController < ApplicationController
   def destroy
   	@movie = Movie.find(params[:id])
   	@movie.destroy
-  	redirect_to movies_path
+  	redirect_to movies_path, notice: "#{@movie.title} was deleted successfully!"
+    else
   end
 
   protected
