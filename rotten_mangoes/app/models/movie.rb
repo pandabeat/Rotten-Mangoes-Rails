@@ -28,6 +28,11 @@ class Movie < ActiveRecord::Base
   scope :by_director, -> (director) { where("director LIKE ?", "%#{director}%")}
   scope :by_category, -> (category) { where("category LIKE ?", "%#{category}%")}
 
+  scope :duration_less_than_90,  -> { where("runtime_in_minutes < 90")}
+  scope :duration_greater_than_120,  -> { where("runtime_in_minutes > 120")}
+  scope :duration_between_90_and_120, -> { where("runtime_in_minutes >= 90 AND runtime_in_minutes <= 120")}
+
+
   def review_average
       reviews.sum(:rating_out_of_ten)/reviews.size
   end

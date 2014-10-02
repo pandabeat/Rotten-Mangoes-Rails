@@ -4,6 +4,9 @@
   <%= text_field_tag :title, params[:title], placeholder: "Search Title" %>
   <%= text_field_tag :category, params[:category], placeholder: "Search Category" %>
   <%= text_field_tag :director, params[:director], placeholder: "Search Director" %>
+  
+  <%= select_tag :runtime_select, options_for_select(['Less than 90 mins', 'Between 90 and 120 mins', 'Greater than 120 mins']), :prompt => 'No duration filter' %>
+
   <%= submit_tag "Search", :name => nil %>
 <% end %>
 <div class="actions"><%= link_to "Clear Search", movies_path %></div>
@@ -22,7 +25,7 @@
     <h3>Avg. Rating: This movie does not have any reviews yet.</h3>
   <% end %>
   <h3><%= formatted_date(movie.release_date) %></h3>
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes | <%= movie.duration %></h4>
+  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
   <p><%= movie.description %></p>
   <hr>
 <% end %>

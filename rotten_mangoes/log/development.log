@@ -22324,3 +22324,805 @@ It is the eighth theatrical film in the franchise. The film was released in Unit
             WHERE name='index_reviews_on_user_id' AND type='index'
 
   [1m[36mMovie Load (15.7ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+
+
+Started GET "/" for 10.0.2.2 at 2014-10-02 21:25:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (3.3ms)[0m  SELECT  "movies".* FROM "movies"   ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0
+  [1m[36m (2.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 14]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 15]]
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (343.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 1871ms (Views: 1694.2ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:45 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:45 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:45 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:45 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:45 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:45 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:46 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:47 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:47 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Less+than+90+mins" for 10.0.2.2 at 2014-10-02 21:25:50 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Less than 90 mins"}
+  [1m[36mMovie Load (2.3ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes < 90)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes < 90)
+  Rendered movies/index.html.erb within layouts/application (36.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 848ms (Views: 839.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:25:52 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Between+90+and+120+mins" for 10.0.2.2 at 2014-10-02 21:25:58 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Between 90 and 120 mins"}
+  [1m[36mMovie Load (2.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes <= 90 AND runtime_in_minutes >= 120)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes <= 90 AND runtime_in_minutes >= 120)
+  Rendered movies/index.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 810ms (Views: 803.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:59 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:59 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:59 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:59 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:59 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:59 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:25:59 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:26:01 +0000
+
+
+Started GET "/movies" for 10.0.2.2 at 2014-10-02 21:27:01 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.8ms)[0m  [1mSELECT  "movies".* FROM "movies"   ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (2.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 14]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 15]]
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 12]]
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (163.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 1018ms (Views: 1004.3ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Between+90+and+120+mins" for 10.0.2.2 at 2014-10-02 21:27:05 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Between 90 and 120 mins"}
+  [1m[35mMovie Load (2.0ms)[0m  SELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes <= 90 AND runtime_in_minutes >= 120)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes <= 90 AND runtime_in_minutes >= 120)[0m
+  Rendered movies/index.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 835ms (Views: 830.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:06 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:06 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:06 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:06 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:06 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:06 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:07 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:08 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:08 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:08 +0000
+
+
+Started GET "/movies" for 10.0.2.2 at 2014-10-02 21:27:12 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.1ms)[0m  SELECT  "movies".* FROM "movies"   ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 14]]
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 15]]
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (173.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1038ms (Views: 1022.4ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:13 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:14 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:15 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=" for 10.0.2.2 at 2014-10-02 21:27:16 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>""}
+  [1m[36mMovie Load (2.1ms)[0m  [1mSELECT  "movies".* FROM "movies"   ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 14]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 15]]
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 12]]
+  [1m[36m (2.7ms)[0m  [1mSELECT COUNT(*) FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (169.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1005ms (Views: 990.1ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:17 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:17 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:17 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:17 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:17 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:17 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:17 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:18 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:19 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:19 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Between+90+and+120+mins" for 10.0.2.2 at 2014-10-02 21:27:21 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Between 90 and 120 mins"}
+  [1m[35mMovie Load (1.7ms)[0m  SELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes <= 90 AND runtime_in_minutes >= 120)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes <= 90 AND runtime_in_minutes >= 120)[0m
+  Rendered movies/index.html.erb within layouts/application (27.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 860ms (Views: 854.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:27:22 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:27:23 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Between+90+and+120+mins" for 10.0.2.2 at 2014-10-02 21:28:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Between 90 and 120 mins"}
+  [1m[35mMovie Load (14.7ms)[0m  SELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes >= 90 AND runtime_in_minutes <= 120)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 13]]
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 5]]
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes >= 90 AND runtime_in_minutes <= 120)
+  Rendered movies/index.html.erb within layouts/application (349.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 1648ms (Views: 1461.7ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:29 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:29 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:29 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:29 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:29 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:29 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:29 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:30 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:31 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:28:31 +0000
+
+
+Started GET "/movies?category=&director=&page=2&runtime_select=Between+90+and+120+mins&title=&utf8=%E2%9C%93" for 10.0.2.2 at 2014-10-02 21:28:41 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"category"=>"", "director"=>"", "page"=>"2", "runtime_select"=>"Between 90 and 120 mins", "title"=>"", "utf8"=>"✓"}
+  [1m[36mMovie Load (2.6ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes >= 90 AND runtime_in_minutes <= 120)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 5[0m
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 4]]
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes >= 90 AND runtime_in_minutes <= 120)[0m
+  Rendered movies/index.html.erb within layouts/application (130.0ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 977ms (Views: 970.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/movies" for 10.0.2.2 at 2014-10-02 21:28:55 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.8ms)[0m  SELECT  "movies".* FROM "movies"   ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 14]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 15]]
+  [1m[35m (2.3ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (166.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 990ms (Views: 975.6ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/movies" for 10.0.2.2 at 2014-10-02 21:28:56 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.9ms)[0m  [1mSELECT  "movies".* FROM "movies"   ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 14]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 15]]
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 12]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (164.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1009ms (Views: 996.2ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/movies" for 10.0.2.2 at 2014-10-02 21:30:40 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.7ms)[0m  SELECT  "movies".* FROM "movies"   ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0
+  [1m[36m (2.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 14]]
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 15]]
+  [1m[35m (2.1ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (163.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 1000ms (Views: 983.9ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Less+than+90+mins" for 10.0.2.2 at 2014-10-02 21:30:44 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Less than 90 mins"}
+  [1m[36mMovie Load (1.9ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes < 90)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes < 90)
+  Rendered movies/index.html.erb within layouts/application (35.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 867ms (Views: 858.9ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:45 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:45 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:45 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:45 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:45 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:45 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:45 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:30:47 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Less+than+90+mins" for 10.0.2.2 at 2014-10-02 21:31:21 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Less than 90 mins"}
+  [1m[36mMovie Load (1.8ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes < 90)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36m (2.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes < 90)
+  Rendered movies/index.html.erb within layouts/application (40.1ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 891ms (Views: 879.6ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:22 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:22 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:22 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:22 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:22 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:23 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:24 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:24 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:24 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:24 +0000
+
+
+Started GET "/movies?utf8=%E2%9C%93&title=&category=&director=&runtime_select=Between+90+and+120+mins" for 10.0.2.2 at 2014-10-02 21:31:27 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"", "category"=>"", "director"=>"", "runtime_select"=>"Between 90 and 120 mins"}
+  [1m[36mMovie Load (2.0ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE (runtime_in_minutes >= 90 AND runtime_in_minutes <= 120)  ORDER BY "movies"."title" ASC LIMIT 5 OFFSET 0[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 13]]
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "reviews"  WHERE "reviews"."movie_id" = ?  [["movie_id", 10]]
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM "movies"  WHERE (runtime_in_minutes >= 90 AND runtime_in_minutes <= 120)[0m
+  Rendered movies/index.html.erb within layouts/application (125.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 973ms (Views: 959.3ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:28 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/movies.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/admin/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/users.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:29 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
+
+
+Started GET "/assets/admin/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
+
+
+Started GET "/assets/movies.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
+
+
+Started GET "/assets/users.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2014-10-02 21:31:30 +0000
