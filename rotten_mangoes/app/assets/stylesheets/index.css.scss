@@ -1,0 +1,57 @@
+.top-container {
+	position: relative;
+	display: inline-block;
+	background-color: #D9D9D9;
+	width: 865px;
+}
+
+.bottom-container {
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+}
+
+.login a:link {
+	color: blue;
+}
+
+.login a:visited {
+	color: purple;
+}
+
+.nav-table {
+	width: 850px;
+}
+
+
+#top-logo img{
+	height: 100%;
+	width: 350px;
+}
+
+#top-logo {
+	position: relative;
+	height: 50px;
+}
+
+.panel {
+	padding: 15px;
+	margin-left: 5px;
+	height: 100%;
+	width: 850px;
+	border-radius: 25px;
+  	box-shadow: 10px 10px 5px #888888;
+}
+
+.paginate-top, .paginate-bottom {
+	position: relative;
+	display: inline-block;
+	margin-left: 300px;
+	font-size: 1.3em;
+}
+
+.footer-copyright {
+	margin-left: 300px;
+}
+
+

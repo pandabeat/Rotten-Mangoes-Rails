@@ -1,3 +1,41 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#movie_title a:link {
+	color: blue;
+}
+
+#movie_title a:visited {
+	color: purple;
+}
+
+#submit_movie a {
+	color: #FFF;
+}
+
+.movie-info {
+	padding-left: 10px;
+}
+
+.form-partial {
+	padding: 20px;
+	background-color: #D9D9D9;
+}
+
+.full-movie-image {
+	padding: 20px 0 20px 200px;
+}
+
+.panel h2 a:link {
+	color: blue;
+}
+
+.panel h2 a:visited {
+	color: purple;
+}
+
+.description-text {
+	font-style: italic;
+}

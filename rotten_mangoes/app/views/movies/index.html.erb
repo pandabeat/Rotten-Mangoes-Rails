@@ -1,43 +1,64 @@
-<h1>Rotten Mangoes</h1>
 
-<%= form_tag(movies_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :title, params[:title], placeholder: "Search Title" %>
-  <%= text_field_tag :category, params[:category], placeholder: "Search Category" %>
-  <%= text_field_tag :director, params[:director], placeholder: "Search Director" %>
-  
-  <%= select_tag :runtime_select, options_for_select(['Less than 90 mins', 'Between 90 and 120 mins', 'Greater than 120 mins']), :prompt => 'No duration filter' %>
-
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
-<div class="actions"><%= link_to "Clear Search", movies_path %></div>
-
-
-<br>
-<div><%= link_to "Submit a movie!", new_movie_path %></div>
-<hr>
-<% @movies.each do |movie| %>
-  <table>
-  <tr>
-    <td>
-      <a href="<%= movie_path(movie) %>"><%= image_tag movie.image_url(:thumb) %></a>
-    </td>
-    <td>
-      <h2><%= link_to movie.title, movie_path(movie) %></h2>
-      <h3>Genre: <%= movie.category %></h3>
-      <% if movie.reviews.size > 0 %>
-        <h3>Avg. Rating: <%= movie.review_average %>/10</h3>
-    	<% else %>
-        <h3>Avg. Rating: This movie does not have any reviews yet.</h3>
-      <% end %>
-      <h3><%= formatted_date(movie.release_date) %></h3>
-      <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-      <p><%= movie.description %></p>
+<div class="top-container">
+<form class="navbar-form navbar-left" role="search" id="nav-top-area">
+  <table class="nav-table">
+    <tr>
+      <td><div id="top-logo"><img src="/images/rm-logo.png"></div></td>
+      <td><div class="login"> <% if current_user %>
+      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+        <% if User.find(session[:user_id]).admin %> 
+          | ADMIN: <%= link_to "User Management", admin_users_path %> |
+        <% end %>
+    <% else %>
+      <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+    <% end %></div>
+    </tr>
+    <tr><td>
+          <%= form_tag(movies_path, :method => "get", class: "form-group") do %>
+          <%= text_field_tag :title, params[:title], placeholder: "Search Title" %>
+          <%= text_field_tag :category, params[:category], placeholder: "Search Category" %>
+          <%= text_field_tag :director, params[:director], placeholder: "Search Director" %>
+          <%= select_tag :runtime_select, options_for_select(['Less than 90 mins', 'Between 90 and 120 mins', 'Greater than 120 mins']), :prompt => 'No duration filter' %>
+          <% end %>
+        </td>
+      <td><button type="Search" class="btn btn-warning" id="search-button">Search</button></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="btn btn-warning"><%= link_to "Clear Search", movies_path %></div>
       </td>
-  </tr>
+    </tr>
   </table>
-  <hr>
-<% end %>
-<br>
-<%= paginate @movies %>
+</form>
+</div>
+
+<div class="bottom-container">
+  <div class="paginate-top"><%= paginate @movies %></div>
+  <% @movies.each do |movie| %>
+  <div class="panel">
+    <table>
+    <tr>
+      <td>
+        <a href="<%= movie_path(movie) %>" class="movie-image"><%= image_tag movie.image_url(:thumb) %></a>
+      </td>
+      <td class="movie-info">
+        <h4 id="movie_title"><%= link_to movie.title, movie_path(movie) %></h4>
+        <h5>Genre: <%= movie.category %></h5>
+        <% if movie.reviews.size > 0 %>
+          <h5>Avg. Rating: <%= movie.review_average %>/10</h5>
+      	<% else %>
+          <h5>Avg. Rating: This movie does not have any reviews yet.</h5>
+        <% end %>
+        <h5><%= formatted_date(movie.release_date) %></h5>
+        <h5>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h5>
+        <p class="description-text"><%= movie.description %></p>
+        </td>
+    </tr>
+    </table>
+    </div>
+  <% end %>
+</div>
+
+<div class="paginate-bottom"><%= paginate @movies %></div>
 <br>
 <hr>
