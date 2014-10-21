@@ -11,8 +11,8 @@ A movie database with user generated content. Users can view the list of movies,
 Please run 'bundle install' to install all necessary gems.
 Some of the special gems used in this app include:
 
-carrierwave - for file upload
-rmagik - for image resizing
+carrierwave - for file upload <br>
+rmagik - for image resizing <br>
 kaminari - for pagination
 
 
