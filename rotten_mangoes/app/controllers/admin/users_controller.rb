@@ -1,6 +1,7 @@
-class Admin::UsersController < ApplicationController
+require 'pry'
+class Admin::UsersController < Admin::BaseController
 
-before_filter :authorization
+ before_filter :authorization
 
 	def index
 		@users = User.page(params[:page]).per(5)
@@ -51,6 +52,26 @@ before_filter :authorization
 			@user.destroy
   		redirect_to admin_users_path, notice: "User: #{@user.full_name} was deleted successfully"
   	end
+  end
+
+  # =>  PUT /admin/users/:user/switch_back
+   def switch_back
+    flash.keep[:notice] = "You are no longer ghost viewing #{current_user.full_name}\'s account"
+    session[:user_id] = session[:actual_user_id]
+    session[:actual_user_id] = nil
+    redirect_to admin_users_path
+  end
+
+  # =>  PUT /admin/users/:user_id/switch
+  def switch
+    if !ghost?
+      @user = User.where(admin: [false, nil]).find(params[:id])
+      session[:actual_user_id] = current_user.id
+      session[:user_id] = @user.id
+      redirect_to :back, notice: "You are now ghost viewing #{@user.full_name}\'s account"
+    else
+      redirect_to :back, notice: "You are already in ghost view. Currently viewing #{@user.full_name}\'s account"
+    end
   end
 
   protected

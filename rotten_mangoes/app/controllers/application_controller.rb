@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorization
-    unless current_user && current_user.admin
+    unless admin? || ghost? 
       flash[:error] = "You must be an admin."
       redirect_to :root
     end
@@ -28,6 +28,22 @@ class ApplicationController < ActionController::Base
   #   params[:q].try(:merge, m: 'or')
   # end
 
-  helper_method :current_user, :authorization
+
+  def admin?
+    current_user.admin?
+  end
+
+  # => if there is a persisted user logged in (admin) that is viewing as another account user
+  def ghost?
+    actual_user.present?
+  end
+ 
+  # => when an admin switches to a reguar account (ghost view), admin remains the actual persisted user
+  def actual_user
+    @actual_user ||= User.where(admin: true).find_by(id: session[:actual_user_id]) if session[:actual_user_id]
+  end
+
+  helper_method :current_user, :admin?, :ghost?, :actual_user
+
 
 end

@@ -11,8 +11,12 @@
 	color: purple;
 }
 
-#submit_movie a {
-	color: #FFF;
+#add-movie-button {
+	position: relative;
+	display: inline-block;
+	margin-left: 250px;
+	text-decoration: none;
+
 }
 
 .movie-info {
@@ -26,6 +30,18 @@
 
 .full-movie-image {
 	padding: 20px 0 20px 200px;
+}
+
+
+.movie-panel {
+	padding: 15px;
+	margin: 20px auto;
+	background-color: #FFF;
+	height: 100%;
+	width: 90%;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
+	display: block;
 }
 
 .panel h2 a:link {

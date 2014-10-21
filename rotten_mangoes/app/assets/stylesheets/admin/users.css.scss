@@ -1,3 +1,21 @@
 // Place all the styles related to the admin/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-panel {
+	display: block;
+	position: relative;
+	width: 500px;
+	padding: 3px;
+	margin: 5px 400px 5px 20px;
+	border: 2px solid #000;
+	box-shadow: 5px 5px 5px #888888;
+	background-color: white;
+}
+
+.admin-user-links a:link {
+	color: #428bca;
+}
+.admin-user-links a:visited {
+	color: #428bca;
+}

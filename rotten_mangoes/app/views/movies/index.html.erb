@@ -1,64 +1,67 @@
 
-<div class="top-container">
-<form class="navbar-form navbar-left" role="search" id="nav-top-area">
-  <table class="nav-table">
-    <tr>
-      <td><div id="top-logo"><img src="/images/rm-logo.png"></div></td>
-      <td><div class="login"> <% if current_user %>
-      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
-        <% if User.find(session[:user_id]).admin %> 
-          | ADMIN: <%= link_to "User Management", admin_users_path %> |
-        <% end %>
-    <% else %>
-      <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
-    <% end %></div>
-    </tr>
-    <tr><td>
-          <%= form_tag(movies_path, :method => "get", class: "form-group") do %>
-          <%= text_field_tag :title, params[:title], placeholder: "Search Title" %>
-          <%= text_field_tag :category, params[:category], placeholder: "Search Category" %>
-          <%= text_field_tag :director, params[:director], placeholder: "Search Director" %>
-          <%= select_tag :runtime_select, options_for_select(['Less than 90 mins', 'Between 90 and 120 mins', 'Greater than 120 mins']), :prompt => 'No duration filter' %>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8" id="nav-bar left">
+        <form class="navbar-form" role="search">
+          <table class="nav-table">
+            <div id="top-logo"><a href="/movies"><img src="/images/rm-logo.png"></a>
+            </div>
+
+            <%= form_tag(movies_path, :method => "get", class: "form-group") do %>
+              <%= text_field_tag :title, params[:title], placeholder: "Search Title" %>
+              <%= text_field_tag :category, params[:category], placeholder: "Search Category" %>
+              <%= text_field_tag :director, params[:director], placeholder: "Search Director" %>
+              <%= select_tag :runtime_select, options_for_select(['Less than 90 mins', 'Between 90 and 120 mins', 'Greater than 120 mins']), :prompt => 'No duration filter' %>
+            <% end %>
+       
+            <button type="Search" class="btn btn-warning btn-sm" id="search-button">Search</button>
+            <div class="btn btn-warning btn-sm"><%= link_to "Clear Search", movies_path %></div>
+          </table>
+        </form>
+      </div>
+
+      <div class="col-lg-4" id ="login">
+        <div class="login"> 
+          <!-- If logged in, current user name displays in nav bar -->
+          <% if current_user %>
+            Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+            <!-- If currently logged in as admin and viewing through another profile account -->
+            <% if ghost? %>
+              <br>Ghost view (admin) <%= link_to "Switch Back", switch_back_admin_users_path, method: :put %> 
+            <% end %>
+            <!-- If logged in as admin -->
+            <% if admin? %> 
+              <br>| ADMIN: <%= link_to "User Management", admin_users_path %> | 
+            <% end %>
+          <% else %>
+            <!-- If no user logged in to session, display log in and sign up -->
+            <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
           <% end %>
-        </td>
-      <td><button type="Search" class="btn btn-warning" id="search-button">Search</button></td>
-    </tr>
-    <tr>
-      <td>
-        <div class="btn btn-warning"><%= link_to "Clear Search", movies_path %></div>
-      </td>
-    </tr>
-  </table>
-</form>
-</div>
-
-<div class="bottom-container">
-  <div class="paginate-top"><%= paginate @movies %></div>
-  <% @movies.each do |movie| %>
-  <div class="panel">
-    <table>
-    <tr>
-      <td>
-        <a href="<%= movie_path(movie) %>" class="movie-image"><%= image_tag movie.image_url(:thumb) %></a>
-      </td>
-      <td class="movie-info">
-        <h4 id="movie_title"><%= link_to movie.title, movie_path(movie) %></h4>
-        <h5>Genre: <%= movie.category %></h5>
-        <% if movie.reviews.size > 0 %>
-          <h5>Avg. Rating: <%= movie.review_average %>/10</h5>
-      	<% else %>
-          <h5>Avg. Rating: This movie does not have any reviews yet.</h5>
-        <% end %>
-        <h5><%= formatted_date(movie.release_date) %></h5>
-        <h5>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h5>
-        <p class="description-text"><%= movie.description %></p>
-        </td>
-    </tr>
-    </table>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
+</nav>
+
+
+
+<div class="btn btn-warning" id="add-movie-button-1">
+  <%= link_to "Add a movie", new_movie_path %>
 </div>
 
-<div class="paginate-bottom"><%= paginate @movies %></div>
+  <%= render 'movies' %>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="btn btn-warning" id="add-movie-button-2">
+      <%= link_to "Add a movie", new_movie_path %>
+    </div>
+    <p><%= paginate @movies %></p>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
 <br>
 <hr>

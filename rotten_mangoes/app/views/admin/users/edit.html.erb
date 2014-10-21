@@ -1,4 +1,9 @@
-<%= link_to "Back to all users", admin_user_path %><br/>
+<div class="user-list-nav">
+<%= link_to "Back to all users", admin_user_path(@user) %><br/>
+<% if ghost? %>
+  <div>You are currently ghost viewing <%= current_user.full_name %>'s account.</div><br>
+<% end %>
+</div>
 
 <h2>Edit this user</h2>
 <%= render 'form' %>

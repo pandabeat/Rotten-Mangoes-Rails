@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create]
+
   # resource :user, only: [:new, :create, :show]
   # resources :users, only: [:new, :create, :show]
   # => if you use user and userS, this is an example of singular routes. 
@@ -22,8 +23,22 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   namespace :admin do
-    resources :users
+    resources :users do
+      collection do
+        put :switch_back
+      end
+      member do # => be able to switch to invididual member or resources (which is a user in users)
+        put :switch # => see switch definition in Admin::UsersController
+        # put :switch_back
+      end
+    end
   end
+
+
+  # => another way to define the namespace
+  # scope :admin, module: :admin, as: :admin do
+  #   resources :users
+  # end 
 
 
   root to: 'movies#index'
